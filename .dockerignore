@@ -1,0 +1,30 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+
+# Testing and analysis caches
+.pytest_cache/
+.ruff_cache/
+promptfoo_cache/
+
+# Local databases and logs
+app.db
+*.log
+
+# Secrets
+.env
+
+# Streamlit local configuration
+.streamlit/
