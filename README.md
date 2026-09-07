@@ -122,6 +122,17 @@ Platforma include o interfață internaționalizată. Mai jos sunt screenshot-ur
 * **15. AI Grounding Portability:** ![AI Grounding Portability](assets/15_llm_about_grounding.png)
 * **16. Control Panel Footer Ingestion:** ![Control Panel Footer Ingestion](assets/16_dashboard_footer_streaming.png)
 
+---
+
+## 📊 Evaluare și Siguranță LLMOps (Promptfoo QA)
+
+Pentru a garanta siguranța în producție a motorului AI (**Qwen 3.6-27B**), platforma integrează o suită automatizată de teste de securitate cibernetică.
+
+Sistemul a trecut cu succes toate verificările împotriva tentativelor de manipulare a contextului (Prompt Injection), respectarea barierelor operaționale și conformitatea lingvistică.
+
+* **Status Suită Testare:** `PASSED (100%)`
+* 🛠️ **Fișier Raport Sursă:** Vezi [Raportul de Evaluare QA Complet Industrial](promptfoo_report.html) din structura de directoare a proiectului.
+
 
 ## ☁️ Cloud Development & GitHub Codespaces Infrastructure
 
