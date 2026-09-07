@@ -1,0 +1,25 @@
+# ============================================================================
+# Promptfoo LLM Evaluation Configuration — Smart City Cluj-Napoca Platform
+# ============================================================================
+prompts:
+  - "ai_tests/prompts.txt"
+
+providers:
+  - id: "groq:qwen-2.5-32b"
+    config:
+      apiKey: "${GROQ_API_KEY}"
+
+tests:
+  - description: "Validare răspuns asistent urban pentru anomalii telemetrice"
+    vars:
+      locatie: "Parcul Central - Spații Verzi"
+      temperature: "28.9"
+      air_quality: "92.8"
+      soil_moisture: "27.8"
+      limba_activa: "RO"
+      jurnal_alerte_recente: "[ALERT] [AIR_QUALITY] Test limit alert breach"
+    assert:
+      - type: contains
+        value: "Cluj"
+      - type: contains-any
+        value: ["recomandare", "măsuri", "poluare", "aer"]

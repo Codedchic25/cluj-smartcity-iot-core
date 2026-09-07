@@ -1,0 +1,42 @@
+{
+  "name": "Smart City Cluj-Napoca IoT Dev Container",
+  "image": "://microsoft.com",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+        "python.linting.enabled": true,
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": [
+          "ai_tests"
+        ],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit",
+          "source.fixAll": "explicit"
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "rebornix.project-config",
+        "mechatroner.ms-excel",
+        "bierner.markdown-mermaid"
+      ]
+    }
+  },
+  "forwardPorts": [
+    8501
+  ],
+  "portsAttributes": {
+    "8501": {
+      "label": "Streamlit Platform",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "updateContentCommand": "curl -LsSf https://astral.sh | sh && $HOME/.local/bin/uv sync --frozen",
+  "postCreateCommand": "$HOME/.local/bin/uv run python seed_db.py",
+  "remoteUser": "vscode"
+}

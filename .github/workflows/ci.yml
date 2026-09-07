@@ -1,0 +1,36 @@
+name: 🚀 Smart City Cluj-Napoca IoT CI/CD Engine
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Codebase Repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Initialize Clean Python Target Runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: ⚡ Bootstrap Astral UV Package Manager
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: 📦 Sync Framework Dependencies
+        run: uv sync --frozen --all-groups
+
+      - name: 🔎 Verify Pytest Installation
+        run: uv run pytest --version
+
+      - name: 🗄️ Provision Isolated Database Layer
+        run: uv run python seed_db.py
+
+      - name: 🧪 Run Automated Regression Tests
+        run: uv run pytest -v -s

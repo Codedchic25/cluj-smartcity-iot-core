@@ -1,0 +1,40 @@
+﻿# Python environment and package managers
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.uv/
+
+# IDEs, editors and OS metadata
+.idea/
+.DS_Store
+Thumbs.db
+
+# Allow portable workspace configurations but block user-specific cache
+.vscode/*
+!.vscode/settings.json
+
+# Source Control tracking protection
+.git/
+
+# Testing and Static Analysis caches
+.pytest_cache/
+.ruff_cache/
+promptfoo_cache/
+.promptfoo/
+html_report/
+
+# Local databases, instances and operation logs (Strict Data Protection)
+app.db
+cluj_smart.db
+*.db
+*.log
+security_alerts.log
+
+# Layered Security Configuration (Defense-in-Depth Secrets Isolation)
+.env
+.env.local
+.env.*.local
+.streamlit/
